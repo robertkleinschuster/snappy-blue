@@ -1,11 +1,12 @@
 import { CounterButton, Link } from "ui";
+import React from "react";
 
-export default function Index(): JSX.Element {
+export default function Index(): React.JSX.Element {
   return (
     <div className="container">
       <h1 className="title">
         Blog <br />
-        <span>Kitchen Sink</span>
+        <span>Hello World</span>
       </h1>
       <CounterButton />
       <p className="description">

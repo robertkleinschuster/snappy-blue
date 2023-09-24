@@ -11,6 +11,7 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 import { Analytics } from "@vercel/analytics/react";
+import React from "react";
 import styles from "./styles.css";
 
 export const meta: V2MetaFunction = () => [
@@ -23,7 +24,7 @@ export const meta: V2MetaFunction = () => [
 
 export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
-export default function App(): JSX.Element {
+export default function App(): React.JSX.Element {
   return (
     <html lang="en">
       <head>
