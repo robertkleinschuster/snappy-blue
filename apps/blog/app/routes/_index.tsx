@@ -1,5 +1,6 @@
 import { CounterButton, Link } from "ui";
 import React from "react";
+import {Button} from "@nextui-org/react";
 
 export default function Index(): React.JSX.Element {
   return (
@@ -9,6 +10,7 @@ export default function Index(): React.JSX.Element {
         <span>Hello World</span>
       </h1>
       <CounterButton />
+        <Button color="primary">Press me!</Button>
       <p className="description">
         Built With <Link href="https://turbo.build/repo">Turborepo</Link>
         {" & "}
