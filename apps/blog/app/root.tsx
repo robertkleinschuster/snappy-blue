@@ -1,5 +1,5 @@
 import type {
-  V2_MetaFunction as V2MetaFunction,
+  MetaFunction,
   LinksFunction,
 } from "@remix-run/node";
 import {
@@ -14,7 +14,7 @@ import { Analytics } from "@vercel/analytics/react";
 import React from "react";
 import styles from "./styles.css";
 
-export const meta: V2MetaFunction = () => [
+export const meta: MetaFunction = () => [
   {
     charset: "utf-8",
     title: "Blog | Kitchen Sink",
