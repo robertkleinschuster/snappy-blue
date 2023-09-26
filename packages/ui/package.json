@@ -22,6 +22,8 @@
     "preset": "jest-presets/jest/browser"
   },
   "devDependencies": {
+    "@nextui-org/react": "^2.1.13",
+    "framer-motion": "^10.16.4",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
     "eslint-config-custom": "workspace:*",
