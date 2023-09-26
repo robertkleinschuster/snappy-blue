@@ -1,6 +1,5 @@
 import { CounterButton, Link } from "ui";
 import React from "react";
-import {Button} from "@nextui-org/react";
 
 export default function Index(): React.JSX.Element {
   return (
