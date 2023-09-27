@@ -16,16 +16,7 @@ const config = {
     getAbsolutePath("@storybook/addon-essentials"),
     getAbsolutePath("@storybook/addon-onboarding"),
     getAbsolutePath("@storybook/addon-interactions"),
-    {
-      name: '@storybook/addon-styling',
-      options: {
-        // Check out https://github.com/storybookjs/addon-styling/blob/main/docs/api.md
-        // For more details on this addon's options.
-        postCss: {
-          implementation: getAbsolutePath('postcss'),
-        },
-      },
-    },
+    "@storybook/addon-styling",
   ],
   framework: {
     name: getAbsolutePath("@storybook/react-vite"),
