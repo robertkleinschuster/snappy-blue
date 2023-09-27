@@ -1,6 +1,6 @@
-import { Preview } from '@storybook/react';
-import {NextUIProvider} from "@nextui-org/react";
-import "../src/index.css"
+import { Preview } from "@storybook/react";
+import { NextUIProvider } from "@nextui-org/react";
+import "../src/index.css";
 
 const preview: Preview = {
   parameters: {
@@ -14,9 +14,9 @@ const preview: Preview = {
   },
   decorators: [
     (Story) => (
-        <NextUIProvider>
-          <Story />
-        </NextUIProvider>
+      <NextUIProvider>
+        <Story />
+      </NextUIProvider>
     ),
   ],
 };

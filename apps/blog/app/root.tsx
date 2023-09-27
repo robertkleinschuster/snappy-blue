@@ -1,7 +1,4 @@
-import type {
-  MetaFunction,
-  LinksFunction,
-} from "@remix-run/node";
+import type { MetaFunction, LinksFunction } from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -14,7 +11,7 @@ import { Analytics } from "@vercel/analytics/react";
 import React from "react";
 import styles from "./styles.css";
 import tailwind from "./tailwind.css";
-import {NextUIProvider} from "@nextui-org/react";
+import { NextUIProvider } from "@nextui-org/react";
 
 export const meta: MetaFunction = () => [
   {
@@ -25,8 +22,8 @@ export const meta: MetaFunction = () => [
 ];
 
 export const links: LinksFunction = () => [
-    { rel: "stylesheet", href: tailwind },
-    { rel: "stylesheet", href: styles }
+  { rel: "stylesheet", href: tailwind },
+  { rel: "stylesheet", href: styles },
 ];
 
 export default function App(): React.JSX.Element {
@@ -37,13 +34,13 @@ export default function App(): React.JSX.Element {
         <Links />
       </head>
       <body>
-      <NextUIProvider>
-        <Outlet />
-        <ScrollRestoration />
-        <Scripts />
-        <LiveReload />
-        <Analytics />
-      </NextUIProvider>
+        <NextUIProvider>
+          <Outlet />
+          <ScrollRestoration />
+          <Scripts />
+          <LiveReload />
+          <Analytics />
+        </NextUIProvider>
       </body>
     </html>
   );
