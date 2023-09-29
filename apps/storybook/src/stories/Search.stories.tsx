@@ -60,6 +60,6 @@ export const Demo: StoryObj<typeof Search<string>> = {
   args: {
     placeholder: 'Suche...',
     loadResults: (text: string) =>
-        demoEntries.filter((item) => text.length === 0 || item.data.includes(text)),
+        demoEntries.filter((item) => text.length > 0 && item.data.includes(text)),
   },
 };
