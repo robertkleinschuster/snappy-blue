@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import {
   Button,
   Listbox,
@@ -6,56 +6,52 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-  Input, Divider, Spacer
+  Input,
+  Divider,
+  Spacer,
 } from "@nextui-org/react";
 
-export interface SuggestionItemProps {
-  key: string, label: string
+export interface SuggestionItemProps<T> {
+  key: string;
+  data: T;
 }
 
-export interface SuggestionInputProps {
-  suggest: (text: string) => SuggestionItemProps[]
+export interface SuggestionInputProps<T> {
+  loadResults: (text: string) => SuggestionItemProps<T>[];
+  children: (itemProps: SuggestionItemProps<T>) => React.JSX.Element;
 }
 
-export function SuggestionInput(props: SuggestionInputProps): React.JSX.Element {
-  const [value, setValue] = useState("");
-  const [items, setItems] = useState<SuggestionItemProps[]>(props.suggest(value));
+export function SuggestionInput<T>({
+  loadResults,
+  children,
+}: SuggestionInputProps<T>): React.JSX.Element {
+  const [query, setQuery] = useState("");
 
   return (
     <div>
-      <Popover
-        backdrop="blur"
-        placement="bottom"
-      >
+      <Popover backdrop="blur" placement="bottom">
         <PopoverTrigger>
-          <Button>{value ? value : "Suchen"}</Button>
+          <Button>{query}</Button>
         </PopoverTrigger>
         <PopoverContent>
           <Input
-            onValueChange={v => {
-              setValue(v);
-              setItems(props.suggest(v))
-            }}
+            onValueChange={setQuery}
             ref={(node) => node?.focus()}
-            value={value}
-           />
+            value={query}
+          />
           <Spacer />
           <Divider />
-            {/* @ts-expect-error Server Component */}
-            <Listbox
-                aria-label="Single selection example"
-                items={items}
-                onSelectionChange={() => {console.log('test')}}
-                selectedKeys={[]}
-                selectionMode="single"
-                variant="flat"
-            >
-              {(item) => (
-                  <ListboxItem key={item.key}>
-                    {item.label}
-                  </ListboxItem>
-              )}
-            </Listbox>
+          {/* @ts-expect-error Server Component */}
+          <Listbox
+            aria-label="Single selection example"
+            items={loadResults(query)}
+            onSelectionChange={console.log}
+            selectedKeys={[]}
+            selectionMode="single"
+            variant="flat"
+          >
+            {(itemProps) => <ListboxItem key={itemProps.key}>{children(itemProps)}</ListboxItem>}
+          </Listbox>
         </PopoverContent>
       </Popover>
     </div>
