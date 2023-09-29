@@ -49,3 +49,17 @@ export const Filter: StoryObj<typeof Search<string>> = {
     await expect(canvas.queryByText("Zweiter Eintrag")).toBe(null);
   },
 };
+
+const demoEntries = [
+  { key: "310", data: "IC 310 - Drava" },
+  { key: "311", data: "IC 311 - Drava" },
+  { key: "79", data: "RJ 79 - Vindobona" },
+];
+
+export const Demo: StoryObj<typeof Search<string>> = {
+  args: {
+    placeholder: 'Suche...',
+    loadResults: (text: string) =>
+        demoEntries.filter((item) => text.length === 0 || item.data.includes(text)),
+  },
+};
