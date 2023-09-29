@@ -1,4 +1,4 @@
-import { SuggestionInput } from "ui";
+import { Search } from "ui";
 import type { Meta, StoryObj } from "@storybook/react";
 import { within, userEvent } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
@@ -6,12 +6,15 @@ import { expect } from "@storybook/jest";
 const entries = [
   { key: "one", data: "Erster Eintrag" },
   { key: "two", data: "Zweiter Eintrag" },
+  { key: "three", data: "Dritter Eintrag" },
+  { key: "four", data: "Vierter Eintrag" },
+  { key: "five", data: "Fünfter Eintrag" },
 ];
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Form/SuggestionInput",
-  component: SuggestionInput,
+  title: "Search",
+  component: Search,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
     layout: "centered",
@@ -20,18 +23,26 @@ export default {
   tags: ["autodocs"],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},
-  render: args =>
-      <SuggestionInput {...args}>{itemProps => <>{itemProps.data}</>}</SuggestionInput>,
+  render: (args) => (
+    <Search {...args}>
+      {(itemProps) => <>{itemProps.data}</>}
+    </Search>
+  ),
   args: {
+    placeholder: "Suchen...",
     loadResults: (text: string) =>
-        entries.filter((item) => text.length === 0 || item.data.includes(text)),
+      entries.filter((item) => text.length === 0 || item.data.includes(text)),
   },
-} satisfies Meta<typeof SuggestionInput<string>>;
+} satisfies Meta<typeof Search<string>>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const InputText: StoryObj = {
+export const Filter: StoryObj<typeof Search<string>> = {
+  args: {
+    placeholder: 'Placeholder...'
+  },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement.parentElement as HTMLElement);
+    await expect(canvas.getByRole("button")).toHaveTextContent('Placeholder...')
     await userEvent.click(canvas.getByRole("button"));
     await userEvent.keyboard("Erst");
     await expect(canvas.getByText("Erster Eintrag")).toBeInTheDocument();

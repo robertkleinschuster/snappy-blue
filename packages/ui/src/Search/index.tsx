@@ -8,8 +8,8 @@ import {
   PopoverTrigger,
   Input,
   Divider,
-  Spacer,
 } from "@nextui-org/react";
+import { FiSearch } from "react-icons/fi";
 
 export interface SuggestionItemProps<T> {
   key: string;
@@ -18,39 +18,53 @@ export interface SuggestionItemProps<T> {
 
 export interface SuggestionInputProps<T> {
   loadResults: (text: string) => SuggestionItemProps<T>[];
+  placeholder: string;
   children: (itemProps: SuggestionItemProps<T>) => React.JSX.Element;
 }
 
-export function SuggestionInput<T>({
+export function Search<T>({
   loadResults,
+  placeholder,
   children,
 }: SuggestionInputProps<T>): React.JSX.Element {
   const [query, setQuery] = useState("");
 
   return (
     <div>
-      <Popover backdrop="blur" placement="bottom">
+      <Popover backdrop="blur" containerPadding={0} placement="bottom">
         <PopoverTrigger>
-          <Button>{query}</Button>
+          <Button className="w-60 text-default-500 bg-default-400/20 dark:bg-default-500/20">
+            <FiSearch />
+            {query ? query : placeholder}
+          </Button>
         </PopoverTrigger>
-        <PopoverContent>
-          <Input
-            onValueChange={setQuery}
-            ref={(node) => node?.focus()}
-            value={query}
-          />
-          <Spacer />
+        <PopoverContent className="p-0 w-60">
+          <div className="p-3 w-full">
+            <Input
+              fullWidth
+              className="m-0 p-0"
+              onValueChange={setQuery}
+              ref={(node) => node?.focus()}
+              value={query}
+            />
+          </div>
+
           <Divider />
           {/* @ts-expect-error Server Component */}
           <Listbox
-            aria-label="Single selection example"
+            aria-label="Ergebnisse"
+            className="p-3"
             items={loadResults(query)}
             onSelectionChange={console.log}
             selectedKeys={[]}
             selectionMode="single"
             variant="flat"
           >
-            {(itemProps) => <ListboxItem key={itemProps.key}>{children(itemProps)}</ListboxItem>}
+            {(itemProps) => (
+              <ListboxItem key={itemProps.key}>
+                {children(itemProps)}
+              </ListboxItem>
+            )}
           </Listbox>
         </PopoverContent>
       </Popover>

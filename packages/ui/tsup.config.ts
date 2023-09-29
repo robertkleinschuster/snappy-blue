@@ -5,7 +5,9 @@ export default defineConfig((options: Options) => ({
     js: "'use client'",
   },
   esbuildOptions(esbuildOptions) {
-    esbuildOptions.external = ['@nextui-org/react'];
+    esbuildOptions.external = [
+        '@nextui-org/react',
+    ];
   },
   ...options,
 }));
