@@ -9,5 +9,8 @@ export default defineConfig((options: Options) => ({
         '@nextui-org/react',
     ];
   },
+  loader: {
+    '.ttf': 'file'
+  },
   ...options,
 }));
