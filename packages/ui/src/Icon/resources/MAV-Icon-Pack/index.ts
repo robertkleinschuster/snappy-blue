@@ -8,6 +8,6 @@ map.set('nightjet', '\u019f')
 map.set('railjet-express', '\u01ad')
 map.set('intercity', '\u01da')
 
-addMissing(map, 0x0021, 0x082D)
+addMissing(map, 0x0021, 0x022D)
 
 export default createResource('MAV-Icon-Pack', map);
