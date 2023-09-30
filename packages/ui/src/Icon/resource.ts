@@ -9,9 +9,8 @@ export class Resource {
     return char;
   }
 
-  get names(): string[]
-  {
-    return Array.from(this.chars.keys())
+  get names(): string[] {
+    return Array.from(this.chars.keys());
   }
 }
 
@@ -32,13 +31,11 @@ export class ResourceCollection {
     return this.getResource(resource).getChar(icon);
   }
 
-  public getFontFamily(resource: string): string
-  {
-    return this.getResource(resource).fontFamily
+  public getFontFamily(resource: string): string {
+    return this.getResource(resource).fontFamily;
   }
 
-  public getResource(name: string)
-  {
+  public getResource(name: string) {
     const resource = this.map.get(name);
 
     if (!resource) {
@@ -47,9 +44,8 @@ export class ResourceCollection {
     return resource;
   }
 
-  get names(): string[]
-  {
-    return Array.from(this.map.keys())
+  get names(): string[] {
+    return Array.from(this.map.keys());
   }
 }
 
@@ -58,4 +54,20 @@ export function createResource(
   chars: Map<string, string>
 ): Resource {
   return new Resource(fontFamily, chars);
+}
+
+export function addMissing(
+  map: Map<string, string>,
+  start: number,
+  end: number
+): void {
+  const existing = new Set(map.values());
+
+  for (let i = start; i <= end; i++) {
+    const char = String.fromCharCode(i);
+    if (!existing.has(char)) {
+      const key = `0000${i.toString(16)}`.slice(-4);
+      map.set(`\\u${key}`, char);
+    }
+  }
 }
