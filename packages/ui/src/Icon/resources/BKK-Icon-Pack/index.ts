@@ -7,6 +7,7 @@ map.set("tram", "\uEA38")
 map.set("trolleybus", "\uEA45")
 map.set("bicycle", "\ue900")
 map.set("bicycle-solid", "\ue901")
+map.set("word", "\ue902")
 
 addMissing(map, 0xE900, 0xEA75)
 
