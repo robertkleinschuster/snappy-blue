@@ -24,9 +24,7 @@ export default {
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},
   render: (args) => (
-    <Search {...args}>
-      {(itemProps) => <>{itemProps.data}</>}
-    </Search>
+    <Search {...args}>{(itemProps) => <>{itemProps.data}</>}</Search>
   ),
   args: {
     placeholder: "Suchen...",
@@ -38,11 +36,13 @@ export default {
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Filter: StoryObj<typeof Search<string>> = {
   args: {
-    placeholder: 'Placeholder...'
+    placeholder: "Placeholder...",
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement.parentElement as HTMLElement);
-    await expect(canvas.getByRole("button")).toHaveTextContent('Placeholder...')
+    await expect(canvas.getByRole("button")).toHaveTextContent(
+      "Placeholder..."
+    );
     await userEvent.click(canvas.getByRole("button"));
     await userEvent.keyboard("Erst");
     await expect(canvas.getByText("Erster Eintrag")).toBeInTheDocument();
@@ -58,8 +58,8 @@ const demoEntries = [
 
 export const Demo: StoryObj<typeof Search<string>> = {
   args: {
-    placeholder: 'Suche...',
+    placeholder: "Suche...",
     loadResults: (text: string) =>
-        demoEntries.filter((item) => text.length > 0 && item.data.includes(text)),
+      demoEntries.filter((item) => text.length > 0 && item.data.includes(text)),
   },
 };
