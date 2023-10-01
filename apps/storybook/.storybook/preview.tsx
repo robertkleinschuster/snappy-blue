@@ -1,7 +1,7 @@
 import { Preview } from "@storybook/react";
 import { NextUIProvider } from "@nextui-org/react";
 import "../src/index.css";
-import 'ui/dist/index.css'
+import "ui/dist/index.css";
 
 const preview: Preview = {
   parameters: {
@@ -14,12 +14,29 @@ const preview: Preview = {
     },
   },
   decorators: [
-    (Story) => (
-      <NextUIProvider>
-        <Story />
-      </NextUIProvider>
-    ),
+    (Story, context) => {
+      document.body.classList.remove('light', 'dark')
+      document.body.classList.add(context.globals.theme)
+      return (
+        <NextUIProvider>
+            <Story />
+        </NextUIProvider>
+      );
+    },
   ],
+  globalTypes: {
+    theme: {
+      description: "Global theme for components",
+      defaultValue: "light",
+      toolbar: {
+        icon: 'contrast',
+        items: [
+          {value: "light", title: 'Light'},
+          {value: "dark", title: 'Dark'}
+        ],
+      },
+    },
+  },
 };
 
 export default preview;

@@ -9,7 +9,7 @@ export default {
   theme: {
     extend: {},
   },
-  darkMode: "media",
+  darkMode: "class",
   plugins: [
     nextui(),
   ],
