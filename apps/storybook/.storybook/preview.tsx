@@ -16,7 +16,9 @@ const preview: Preview = {
   decorators: [
     (Story, context) => {
       document.body.classList.remove('light', 'dark')
-      document.body.classList.add(context.globals.theme)
+      if (context?.globals?.theme) {
+        document.body.classList.add(context.globals.theme)
+      }
       return (
         <NextUIProvider>
             <Story />
@@ -27,7 +29,6 @@ const preview: Preview = {
   globalTypes: {
     theme: {
       description: "Global theme for components",
-      defaultValue: "light",
       toolbar: {
         icon: 'contrast',
         items: [
