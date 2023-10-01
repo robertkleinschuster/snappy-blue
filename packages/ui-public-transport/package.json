@@ -1,0 +1,40 @@
+{
+  "name": "ui-public-transport",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
+    "clean": "rm -rf dist",
+    "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src/",
+    "test": "jest"
+  },
+  "jest": {
+    "preset": "jest-presets/jest/browser"
+  },
+  "devDependencies": {
+    "@nextui-org/react": "^2.1.13",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "eslint-config-custom": "workspace:*",
+    "framer-motion": "^10.16.4",
+    "jest-presets": "workspace:*",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.11.0",
+    "tsconfig": "workspace:*",
+    "ui": "workspace:*",
+    "next-ui-config": "workspace:*",
+    "tsup": "^6.2.3",
+    "typescript": "^5.2.2"
+  }
+}

@@ -2,6 +2,7 @@ import { Preview } from "@storybook/react";
 import { NextUIProvider } from "@nextui-org/react";
 import "../src/index.css";
 import "ui/dist/index.css";
+import "ui-public-transport/dist/index.css";
 
 const preview: Preview = {
   parameters: {
