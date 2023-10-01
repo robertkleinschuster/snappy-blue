@@ -12,6 +12,7 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
+    backgrounds: { disable: true },
   },
   decorators: [
     (Story, context) => {
@@ -29,6 +30,7 @@ const preview: Preview = {
   globalTypes: {
     theme: {
       description: "Global theme for components",
+      defaultValue: 'light',
       toolbar: {
         icon: 'contrast',
         items: [
