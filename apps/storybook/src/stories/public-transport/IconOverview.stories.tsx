@@ -72,7 +72,7 @@ function IconOverview({
 }
 
 export default {
-  title: "Icon/Overview",
+  title: "PublicTransport/IconOverview",
   component: IconOverview,
   parameters: {
     layout: "centered",

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { SearchBar } from "ui-public-transport";
 
 export default {
-  title: "SearchBar",
+  title: "PublicTransport/SearchBar",
   component: SearchBar,
   tags: ["autodocs"],
 } satisfies Meta<typeof SearchBar>;

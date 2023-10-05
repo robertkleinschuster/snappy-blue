@@ -3,6 +3,7 @@ import { NextUIProvider } from "@nextui-org/react";
 import "../src/index.css";
 import "ui/dist/index.css";
 import "ui-public-transport/dist/index.css";
+import React from "react";
 
 const preview: Preview = {
   parameters: {
@@ -16,7 +17,7 @@ const preview: Preview = {
     backgrounds: { disable: true },
   },
   decorators: [
-    (Story, context) => {
+    (Story, context): React.JSX.Element => {
       document.body.classList.remove('light', 'dark')
       if (context?.globals?.theme) {
         document.body.classList.add(context.globals.theme)

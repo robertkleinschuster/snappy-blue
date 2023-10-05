@@ -7,7 +7,7 @@ import {ICONS_BKK, ICONS_DB_1, ICONS_DB_2, ICONS_DB_3, ICONS_MAV, ICONS_OEBB} fr
 const defaultSize = 40
 
 export default {
-  title: "Icon",
+  title: "PublicTransport/Icon",
   component: Icon,
   parameters: {
     layout: "centered",

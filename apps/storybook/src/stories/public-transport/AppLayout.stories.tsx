@@ -68,7 +68,7 @@ function App(): React.JSX.Element {
 }
 
 export default {
-  title: "AppLayout",
+  title: "PublicTransport/AppLayout",
   component: App,
   parameters: {
     layout: 'fullscreen'
