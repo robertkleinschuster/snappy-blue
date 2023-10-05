@@ -11,28 +11,35 @@ import {
   Snippet,
   Pagination,
 } from "@nextui-org/react";
-import { useState } from "react";
+
+import { useArgs } from '@storybook/preview-api';
+
 
 interface IconOverviewProps {
   resource: string;
   size: number;
   itemsPerPage: number;
+  onChangePage: (page: number) => void
+  page: number
 }
 
 function IconOverview({
   resource,
   size,
   itemsPerPage,
+  onChangePage,
+  page
 }: IconOverviewProps): React.JSX.Element {
+
   const names = iconResources.getResource(resource).names.map((name) => {
     return { name: name };
   });
 
   const pages = Math.ceil(names.length / itemsPerPage);
-  const [page, setPage] = useState(1);
+
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-      <Pagination page={page} showControls total={pages} onChange={setPage} />
+      <Pagination page={page} showControls total={pages} onChange={onChangePage} />
       <Table>
         <TableHeader>
           <TableColumn key="preview">Preview</TableColumn>
@@ -59,7 +66,7 @@ function IconOverview({
           )}
         </TableBody>
       </Table>
-      <Pagination page={page} showControls total={pages} onChange={setPage} />
+      <Pagination page={page} showControls total={pages} onChange={onChangePage} />
     </div>
   );
 }
@@ -88,7 +95,17 @@ export default {
     size: 40,
     resource: ICONS_BKK,
     itemsPerPage: 5,
+    page: 1
   },
+  render: (args) => {
+
+    const [{ page }, updateArgs] = useArgs();
+
+    const onChangePage = (p: number) => {
+      updateArgs({ page: p })
+    };
+    return <IconOverview {...args} onChangePage={onChangePage} page={page}></IconOverview>
+  }
 } satisfies Meta<typeof IconOverview>;
 
 export const Overview: StoryObj<typeof IconOverview> = {};
