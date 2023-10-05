@@ -1,5 +1,5 @@
 import { log } from "logger";
-import { CounterButton, Link } from "ui";
+import { Link } from "ui";
 import React from "react";
 
 export const metadata = {
@@ -15,7 +15,6 @@ export default function Store(): React.JSX.Element {
         Store <br />
         <span>Kitchen Sink</span>
       </h1>
-      <CounterButton />
       <p className="description">
         Built With{" "}
         <Link href="https://turbo.build/repo" newTab>

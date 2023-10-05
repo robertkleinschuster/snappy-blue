@@ -1,4 +1,4 @@
-import { CounterButton, Link } from "ui";
+import { Link } from "ui";
 import React from "react";
 
 export default function Index(): React.JSX.Element {
@@ -8,7 +8,6 @@ export default function Index(): React.JSX.Element {
         Blog <br />
         <span>Hello World</span>
       </h1>
-      <CounterButton />
       <p className="description">
         Built With <Link href="https://turbo.build/repo">Turborepo</Link>
         {" & "}
