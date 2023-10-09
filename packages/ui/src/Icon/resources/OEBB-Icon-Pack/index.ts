@@ -67,6 +67,12 @@ map.set('arrow-right2', '\u005d')
 map.set('cross', '\u005e')
 map.set('sleeping-car', '\u005f')
 map.set('bistro', '\u0060')
+map.set('0centered', '\u0061')
+map.set('1left', '\u0062')
+map.set('2left', '\u0063')
+map.set('3left', '\u0064')
+map.set('4left', '\u0065')
+map.set('5left', '\u0066')
 
 addMissing(map, 0x0021, 0x00FF)
 
