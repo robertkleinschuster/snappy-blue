@@ -15,9 +15,7 @@ import { useSWEffect, LiveReload } from '@remix-pwa/sw'
 
 export const meta: MetaFunction = () => [
   {
-    charset: "utf-8",
     title: "Blog | Kitchen Sink",
-    viewport: "width=device-width,initial-scale=1",
   },
 ];
 
@@ -32,6 +30,11 @@ export default function App(): React.JSX.Element {
   return (
     <html lang="en">
       <head>
+        <meta charSet="utf-8" />
+        <meta
+            content="width=device-width,initial-scale=1"
+            name="viewport"
+        />
         <Meta />
         <Links />
       </head>
