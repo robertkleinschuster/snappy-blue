@@ -60,7 +60,7 @@ export function Search<T>({
           items={loadResults(query)}
           onAction={(key) => {
             if (onSelect) {
-              onSelect(key as Key);
+              onSelect(key );
             }
           }}
           selectedKeys={[]}

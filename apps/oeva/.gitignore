@@ -9,3 +9,4 @@ build
 public/build
 api/index.js*
 api/_assets*
+public/entry.worker.js

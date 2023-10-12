@@ -1,7 +1,6 @@
 import type { MetaFunction, LinksFunction } from "@remix-run/node";
 import {
   Links,
-  LiveReload,
   Meta,
   Outlet,
   Scripts,
@@ -12,6 +11,7 @@ import React from "react";
 import styles from "./styles.css";
 import tailwind from "./tailwind.css";
 import { NextUIProvider } from "@nextui-org/react";
+import { useSWEffect, LiveReload } from '@remix-pwa/sw'
 
 export const meta: MetaFunction = () => [
   {
@@ -27,6 +27,8 @@ export const links: LinksFunction = () => [
 ];
 
 export default function App(): React.JSX.Element {
+  useSWEffect();
+
   return (
     <html lang="en">
       <head>
