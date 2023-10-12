@@ -54,7 +54,6 @@ export function Search<T>({
         </div>
 
         <Divider />
-        {/* @ts-expect-error Server Component */}
         <Listbox
           aria-label="Ergebnisse"
           className="p-3"

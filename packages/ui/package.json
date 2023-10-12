@@ -23,17 +23,18 @@
   },
   "devDependencies": {
     "@nextui-org/react": "^2.1.13",
-    "@types/react": "^18.2.21",
-    "@types/react-dom": "^18.2.7",
+    "@nextui-org/theme": "^2.1.9",
+    "@types/react": "^18.2.28",
+    "@types/react-dom": "^18.2.13",
     "eslint-config-custom": "workspace:*",
     "framer-motion": "^10.16.4",
     "jest-presets": "workspace:*",
+    "next-ui-config": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.11.0",
     "tsconfig": "workspace:*",
-    "next-ui-config": "workspace:*",
-    "tsup": "^6.2.3",
+    "tsup": "^6.7.0",
     "typescript": "^5.2.2"
   }
 }

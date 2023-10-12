@@ -5,7 +5,7 @@
   "scripts": {
     "build": "vite build",
     "clean": "rm -rf dist",
-    "dev": "vite --host 0.0.0.0 --port 6001 --clearScreen false",
+    "dev": "vite --host 0.0.0.0 --port 1001 --clearScreen false",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src/"
   },
@@ -15,12 +15,12 @@
     "ui": "workspace:*"
   },
   "devDependencies": {
-    "@types/react": "^18.2.21",
-    "@types/react-dom": "^18.2.7",
-    "@vitejs/plugin-react": "^4.0.4",
+    "@types/react": "^18.2.28",
+    "@types/react-dom": "^18.2.13",
+    "@vitejs/plugin-react": "^4.1.0",
     "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",
     "typescript": "^5.2.2",
-    "vite": "^4.4.9"
+    "vite": "^4.4.11"
   }
 }

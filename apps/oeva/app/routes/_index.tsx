@@ -1,4 +1,4 @@
-import { Link } from "ui";
+import { Link, Search } from "ui";
 import React from "react";
 
 export default function Index(): React.JSX.Element {
@@ -8,6 +8,7 @@ export default function Index(): React.JSX.Element {
         Welcome to <br />
         <span>OeVA</span>
       </h1>
+        <Search loadResults={() => []} placeholder="test"></Search>
       <p className="description">
         Built With <Link href="https://turbo.build/repo">Turborepo</Link>
         {" & "}

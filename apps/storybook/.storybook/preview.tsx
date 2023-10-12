@@ -3,7 +3,7 @@ import { NextUIProvider } from "@nextui-org/react";
 import "../src/index.css";
 import "ui/dist/index.css";
 import "ui-public-transport/dist/index.css";
-import React from "react";
+import * as React from "react";
 
 const preview: Preview = {
   parameters: {
