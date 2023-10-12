@@ -35,6 +35,7 @@ export default function App(): React.JSX.Element {
             content="width=device-width,initial-scale=1"
             name="viewport"
         />
+        <link rel="manifest" href="manifest.webmanifest"/>
         <Meta />
         <Links />
       </head>
