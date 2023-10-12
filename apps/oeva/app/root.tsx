@@ -32,7 +32,7 @@ export default function App(): React.JSX.Element {
       <head>
         <meta charSet="utf-8" />
         <meta
-            content="width=device-width,initial-scale=1"
+            content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, minimal-ui"
             name="viewport"
         />
         <link rel="manifest" href="manifest.webmanifest"/>
