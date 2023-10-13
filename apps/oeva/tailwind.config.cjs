@@ -4,7 +4,7 @@ const config = require("next-ui-config/tailwind.config")
 module.exports = {
     ...config,
     content: [
-        "./src/**/*.{js,ts,jsx,tsx}",
+        "./app/**/*.{js,ts,jsx,tsx}",
         "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
     ]
 }
