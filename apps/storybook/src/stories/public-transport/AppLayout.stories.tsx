@@ -1,7 +1,8 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { Tabs, Tab } from "@nextui-org/react";
 import { Outlet, RouterProvider, createMemoryRouter, useNavigate } from "react-router-dom";
-import {SearchBar} from "ui-public-transport/src";
+import {SearchBar} from "ui-public-transport";
+import React from "react";
 
 const router = createMemoryRouter(
   [

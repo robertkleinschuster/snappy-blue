@@ -13,6 +13,7 @@ import {
 } from "@nextui-org/react";
 
 import { useArgs } from '@storybook/preview-api';
+import React from "react";
 
 
 interface IconOverviewProps {
@@ -97,8 +98,9 @@ export default {
     itemsPerPage: 5,
     page: 1
   },
-  render: (args) => {
+  render: (args): React.JSX.Element => {
 
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [{ page }, updateArgs] = useArgs();
 
     const onChangePage = (p: number) => {

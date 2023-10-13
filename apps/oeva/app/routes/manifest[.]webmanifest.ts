@@ -3,12 +3,12 @@ import { json } from '@remix-run/node';
 export const loader = async () => {
   return json(
     {
-      short_name: 'PWA',
-      name: 'Remix PWA',
+      short_name: 'OeVA',
+      name: 'Öffi-Verkehrsauskunft',
       start_url: '/',
       display: 'standalone',
-      background_color: '#d3d7dd',
-      theme_color: '#c34138',
+      background_color: '#222D5A',
+      theme_color: '#222D5A',
       shortcuts: [
         {
           name: 'Homepage',

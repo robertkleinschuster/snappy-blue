@@ -2,9 +2,17 @@ import { Meta, StoryObj } from "@storybook/react";
 import { within } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 import { Icon, iconResources } from "ui";
-import {ICONS_BKK, ICONS_DB_1, ICONS_DB_2, ICONS_DB_3, ICONS_MAV, ICONS_OEBB} from "ui/src";
+import {
+  ICONS_BKK,
+  ICONS_DB_1,
+  ICONS_DB_2,
+  ICONS_DB_3,
+  ICONS_MAV,
+  ICONS_OEBB,
+} from "ui/src";
+import "@storybook/types";
 
-const defaultSize = 40
+const defaultSize = 40;
 
 export default {
   title: "PublicTransport/Icon",
@@ -25,7 +33,7 @@ export default {
       control: {
         type: "range",
         min: 12,
-        max: 200
+        max: 200,
       },
     },
   },
@@ -41,7 +49,7 @@ function createResourceExport(name: string): StoryObj<typeof Icon> {
   return {
     name: name,
     storyName: name,
-    tags: ['autodocs'],
+    tags: ["autodocs"],
     argTypes: {
       icon: {
         control: "select",
@@ -56,15 +64,15 @@ function createResourceExport(name: string): StoryObj<typeof Icon> {
     play: async ({ canvasElement }) => {
       const canvas = within(canvasElement);
       await expect(
-        canvas.getByText(iconResources.getChar(name, icons[0]))
+        canvas.getByText(iconResources.getChar(name, icons[0])),
       ).toBeInTheDocument();
     },
   };
 }
 
-export const BKK = createResourceExport(ICONS_BKK);
-export const MAV = createResourceExport(ICONS_MAV);
-export const OEBB = createResourceExport(ICONS_OEBB);
-export const DB_1 = createResourceExport(ICONS_DB_1);
-export const DB_2 = createResourceExport(ICONS_DB_2);
-export const DB_3 = createResourceExport(ICONS_DB_3);
+export const BKK: StoryObj<typeof Icon> = createResourceExport(ICONS_BKK);
+export const MAV: StoryObj<typeof Icon> = createResourceExport(ICONS_MAV);
+export const OEBB: StoryObj<typeof Icon> = createResourceExport(ICONS_OEBB);
+export const DB_1: StoryObj<typeof Icon> = createResourceExport(ICONS_DB_1);
+export const DB_2: StoryObj<typeof Icon> = createResourceExport(ICONS_DB_2);
+export const DB_3: StoryObj<typeof Icon> = createResourceExport(ICONS_DB_3);

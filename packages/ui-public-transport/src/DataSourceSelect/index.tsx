@@ -10,22 +10,22 @@ export function DataSourceSelect(): React.JSX.Element {
         renderValue={(items) => {
             if (items.at(0)?.key === "oebb") {
                 return (
-                    <Icon icon="logo" key="oebb" resource={ICONS_OEBB} size={20} />
+                    <Icon icon="oebb-logo-wortmarke" key="oebb" resource={ICONS_OEBB} size={20} />
                 );
             }
             if (items.at(0)?.key === "db") {
                 return (
-                    <Icon icon="logo" key="db" resource={ICONS_DB_1} size={20} />
+                    <Icon icon="db-keks-cookie-of-db" key="db" resource={ICONS_DB_1} size={20} />
                 );
             }
             return null;
         }}
     >
-        <SelectItem key="oebb" value="oebb">
-            <Icon icon="logo" resource={ICONS_OEBB} size={20} />
+        <SelectItem textValue="ÖBB" key="oebb" value="oebb">
+            <Icon icon="oebb-logo-wortmarke" resource={ICONS_OEBB} size={20} />
         </SelectItem>
-        <SelectItem key="db" value="db">
-            <Icon icon="logo" resource={ICONS_DB_1} size={20} />
+        <SelectItem textValue="DB" key="db" value="db">
+            <Icon icon="db-keks-cookie-of-db" resource={ICONS_DB_1} size={20} />
         </SelectItem>
     </Select>
 }
