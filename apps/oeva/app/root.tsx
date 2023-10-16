@@ -57,6 +57,7 @@ export default function App(): React.JSX.Element {
             onSelectionChange={(key) => navigate(key as string)}
             radius="none"
             size="lg"
+            className="h-20 bg-default-100"
           >
             <Tab key="/favorites" title="Favoriten" />
             <Tab key="/trains" title="Zugläufe" />

@@ -35,15 +35,15 @@ export function Search<T>({
   const [query, setQuery] = useState("");
 
   return (
-    <Popover backdrop="blur" containerPadding={0} placement="bottom">
+    <Popover backdrop="blur" containerPadding={0} placement="bottom" className="w-full">
       <PopoverTrigger>
         <Button className={className} fullWidth variant="faded">
           <FiSearch />
           {query ? query : placeholder}
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="p-0 w-60">
-        <div className="p-3 w-full">
+      <PopoverContent className="p-0 w-[80vw]">
+        <div className="p-3 w-full"> 
           <Input
             className="m-0 p-0"
             fullWidth

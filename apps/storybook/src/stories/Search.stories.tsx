@@ -2,6 +2,7 @@ import { Search } from "ui";
 import type { Meta, StoryObj } from "@storybook/react";
 import { within, userEvent } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
+import React from "react";
 
 const entries = [
   { key: "one", data: "Erster Eintrag" },
