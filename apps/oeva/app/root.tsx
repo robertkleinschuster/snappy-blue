@@ -45,22 +45,22 @@ export default function App(): React.JSX.Element {
           name="viewport"
         />
         <meta content="ie=edge" httpEquiv="X-UA-Compatible" />
-        <link rel="manifest" href="manifest.webmanifest" />
+        <link href="manifest.webmanifest" rel="manifest" />
         <Meta />
         <Links />
       </head>
       <body>
-        <NextUIProvider className="flex flex-col h-screen">
+        <NextUIProvider className="flex flex-col h-full">
           <div className="flex-grow">
             <Outlet />
           </div>
           <Tabs
+            className="h-20 bg-default-100"
             defaultSelectedKey={location.pathname}
             fullWidth
-            onSelectionChange={(key) => navigate(key as string)}
+            onSelectionChange={(key) => { navigate(key as string); }}
             radius="none"
             size="lg"
-            className="h-20 bg-default-100"
           >
             <Tab key="/favorites" title="Favoriten" />
             <Tab key="/trains" title="Zugläufe" />
