@@ -18,7 +18,7 @@
     "preset": "jest-presets/jest/node"
   },
   "devDependencies": {
-    "@types/node": "^18.18.4",
+    "@types/node": "^18.18.6",
     "eslint-config-custom": "workspace:*",
     "jest-presets": "workspace:*",
     "tsconfig": "workspace:*",

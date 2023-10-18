@@ -65,7 +65,7 @@ const handler = new PrecacheHandler({
     // Make sure to edit this list to match your app's routes.
     // Alternatively, use ['*'] to ignore all routes.
     // Or delete this option to precache all routes.
-    ignoredRoutes: route => route.id.includes('dashboard'),
+    // ignoredRoutes: route => route.id.includes('dashboard'),
   },
 });
 
