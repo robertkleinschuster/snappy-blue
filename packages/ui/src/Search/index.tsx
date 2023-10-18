@@ -17,7 +17,7 @@ export interface SuggestionItemProps<T> {
   data: T;
 }
 
-export interface SuggestionInputProps<T> {
+export interface SearchProps<T> {
   loadResults: (text: string) => SuggestionItemProps<T>[];
   placeholder: string;
   children?: (itemProps: SuggestionItemProps<T>) => React.JSX.Element;
@@ -31,11 +31,11 @@ export function Search<T>({
   children,
   className,
   onSelect,
-}: SuggestionInputProps<T>): React.JSX.Element {
+}: SearchProps<T>): React.JSX.Element {
   const [query, setQuery] = useState("");
 
   return (
-    <Popover backdrop="blur" containerPadding={0} placement="bottom" className="w-full">
+    <Popover backdrop="blur" className="w-full" containerPadding={0} placement="bottom">
       <PopoverTrigger>
         <Button className={className} fullWidth variant="faded">
           <FiSearch />

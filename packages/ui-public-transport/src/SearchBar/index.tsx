@@ -9,7 +9,6 @@ export type SearchBarProps = {
 export function SearchBar({className}: SearchBarProps): React.JSX.Element {
   return (
     <div className={className + " flex gap-4"}>
-    
         <DataSourceSelect />
         <Search loadResults={() => []} placeholder="Suchen..." />
     </div>

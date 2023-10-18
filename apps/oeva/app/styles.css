@@ -1,38 +1,38 @@
-@font-face {
-    font-family: FrutigerNextPro-Regular;
-    src: url("FrutigerNextPro-Regular.otf");
-}
+@import "fonts.css";
 
-
-@font-face {
-    font-family: FrutigerNextPro-Bold;
-    src: url("FrutigerNextPro-Bold.otf");
-}
-
-
-html {
-    font-family: FrutigerNextPro-Regular, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
+:root {
+    font-family: var(--font-frutiger-next-pro-regular);
+    font-synthesis: none;
+    font-size: 16px;
+    text-rendering: optimizeLegibility;
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-tap-highlight-color: transparent;
-}
 
-:root {
+    --font-frutiger-next-pro-regular: FrutigerNextPro-Regular, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
+    --font-frutiger-next-pro-bold: FrutigerNextPro-Bold, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
+
     --nachtblau: #222D5A;
     --Signalgelb: #F9A900;
     --verkehrsrot: #BB1F11;
     --lichtblau: #0089B6;
 }
 
-body {
-    background: #222D5A;
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    overscroll-behavior: none;
+    background: var(--nachtblau);
 }
 
 
-
 h1 {
-    font-family: FrutigerNextPro-Bold, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
+    font-family: var(--font-frutiger-next-pro-bold);
     font-size: 2rem;
     font-weight: bold;
     padding: 0 1.5rem;

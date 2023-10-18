@@ -4,7 +4,8 @@ import {
   Meta,
   Outlet,
   Scripts,
-  ScrollRestoration, useLocation,
+  ScrollRestoration,
+  useLocation,
 } from "@remix-run/react";
 import { Analytics } from "@vercel/analytics/react";
 import React from "react";
@@ -32,16 +33,18 @@ export const links: LinksFunction = () => [
 export default function App(): React.JSX.Element {
   useSWEffect();
   const navigate = useNavigate();
-  const location = useLocation()
+  const location = useLocation();
 
   return (
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
+        <meta content="noindex, nofollow" name="robots" />
         <meta
-          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, minimal-ui"
+          content="width=device-width, height=device-height, viewport-fit=cover, initial-scale=1.0, maximum-scale = 1.0, user-scalable = no"
           name="viewport"
         />
+        <meta content="ie=edge" httpEquiv="X-UA-Compatible" />
         <link rel="manifest" href="manifest.webmanifest" />
         <Meta />
         <Links />
